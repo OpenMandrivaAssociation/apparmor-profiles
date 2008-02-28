@@ -3,7 +3,7 @@
 Summary:	Base AppArmor profiles
 Name:		apparmor-profiles
 Version:	2.1.2
-Release:	%mkrel 1.%{rev}.1
+Release:	%mkrel 1.%{rev}.2
 License:	GPL
 Group:		System/Base
 URL:		http://forge.novell.com/modules/xfmod/project/?apparmor
@@ -30,6 +30,15 @@ rm -rf %{buildroot}
 
 %{makeinstall_std} EXTRASDIR=%{buildroot}%{_sysconfdir}/apparmor/profiles/extras
 install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/apparmor.d/
+
+# remove profiles shipped elsewhere
+rm -f   %{buildroot}%{_sysconfdir}/apparmor.d/sbin.rpcbind \
+        %{buildroot}%{_sysconfdir}/apparmor.d/usr.sbin.traceroute \
+        %{buildroot}%{_sysconfdir}/apparmor.d/bin.ping \
+        %{buildroot}%{_sysconfdir}/apparmor.d/bin.netstat \
+        %{buildroot}%{_sysconfdir}/apparmor.d/sbin.syslogd \
+        %{buildroot}%{_sysconfdir}/apparmor.d/sbin.klogd \
+        %{buildroot}%{_sysconfdir}/apparmor.d/usr.sbin.ntpd
 
 %posttrans
 /sbin/service apparmor condreload
