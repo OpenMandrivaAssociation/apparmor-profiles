@@ -3,12 +3,11 @@
 Summary:	Base AppArmor profiles
 Name:		apparmor-profiles
 Version:	2.1.2
-Release:	%mkrel 1.%{rev}.2
+Release:	%mkrel 1.%{rev}.3
 License:	GPL
 Group:		System/Base
 URL:		http://forge.novell.com/modules/xfmod/project/?apparmor
 Source0:	%{name}-%{version}-%{rev}.tar.gz
-Patch:		apparmor-2.1-961-syslogd.patch
 Requires:	apparmor-parser
 Requires(post):	apparmor-parser
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
@@ -22,7 +21,6 @@ This package contains the basic AppArmor profiles (aka security policy).
 
 %prep
 %setup -q
-%patch -p0
 
 %install
 rm -rf %{buildroot}
