@@ -49,7 +49,6 @@ rm -rf %{buildroot}
 %dir %{_sysconfdir}/apparmor.d
 %config(noreplace) %{_sysconfdir}/apparmor.d/usr.*
 %config(noreplace) %{_sysconfdir}/apparmor.d/sbin.*
-%config(noreplace) %{_sysconfdir}/apparmor.d/bin.*
 %dir %{_sysconfdir}/apparmor.d/abstractions
 %dir %{_sysconfdir}/apparmor.d/program-chunks
 %dir %{_sysconfdir}/apparmor.d/tunables
