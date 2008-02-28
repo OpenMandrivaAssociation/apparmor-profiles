@@ -8,7 +8,6 @@ License:	GPL
 Group:		System/Base
 URL:		http://forge.novell.com/modules/xfmod/project/?apparmor
 Source0:	%{name}-%{version}-%{rev}.tar.gz
-Source1:	sbin.rpcbind
 Patch:		apparmor-2.1-961-syslogd.patch
 Requires:	apparmor-parser
 Requires(post):	apparmor-parser
@@ -29,7 +28,6 @@ This package contains the basic AppArmor profiles (aka security policy).
 rm -rf %{buildroot}
 
 %{makeinstall_std} EXTRASDIR=%{buildroot}%{_sysconfdir}/apparmor/profiles/extras
-install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/apparmor.d/
 
 # remove profiles shipped elsewhere
 rm -f   %{buildroot}%{_sysconfdir}/apparmor.d/sbin.rpcbind \
