@@ -3,7 +3,7 @@
 Summary:	Base AppArmor profiles
 Name:		apparmor-profiles
 Version:	2.1.2
-Release:	%mkrel 1.%{rev}.4
+Release:	%mkrel 1.%{rev}.5
 License:	GPL
 Group:		System/Base
 URL:		http://forge.novell.com/modules/xfmod/project/?apparmor
