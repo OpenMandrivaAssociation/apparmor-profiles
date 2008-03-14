@@ -3,13 +3,14 @@
 Summary:	Base AppArmor profiles
 Name:		apparmor-profiles
 Version:	2.1.2
-Release:	%mkrel 1.%{rev}.6
+Release:	%mkrel 1.%{rev}.7
 License:	GPL
 Group:		System/Base
 URL:		http://forge.novell.com/modules/xfmod/project/?apparmor
 Source0:	%{name}-%{version}-%{rev}.tar.gz
 Source1:	usr.sbin.slapd.apparmor
 Patch:		apparmor-profiles-2.1.2-1091-avahi.patch
+Patch1:		apparmor-profiles-2.1.2-1091-nscd.patch
 Requires:	apparmor-parser
 Requires(post):	apparmor-parser
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
@@ -25,6 +26,7 @@ This package contains the basic AppArmor profiles (aka security policy).
 %setup -q
 # no backup as it touches a profile and they all get copied during %%install
 %patch -p1
+%patch1 -p1
 install -m 0644 %{SOURCE1} apparmor/profiles/extras/usr.sbin.slapd
 
 %install
