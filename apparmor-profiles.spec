@@ -1,4 +1,4 @@
-%define rev 1245
+%define rev 1351
 
 Summary:	Base AppArmor profiles
 Name:		apparmor-profiles
