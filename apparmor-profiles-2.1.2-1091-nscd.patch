@@ -1,0 +1,22 @@
+--- apparmor-profiles-2.1.2/apparmor.d/usr.sbin.nscd.orig	2008-03-14 10:16:24.000000000 -0300
++++ apparmor-profiles-2.1.2/apparmor.d/usr.sbin.nscd	2008-03-14 10:21:56.000000000 -0300
+@@ -18,6 +18,8 @@
+   #include <abstractions/ssl_certs>
+ 
+   capability net_bind_service,
++  capability setgid,
++  capability setuid,
+ 
+   network inet dgram,
+   network inet stream,
+@@ -29,9 +31,8 @@
+   /var/run/.nscd_socket wl,
+   /var/run/avahi-daemon/socket w,
+   /var/run/nscd/ r,
+-  /var/run/nscd/db* wl,
+   /var/run/nscd/socket wl,
+-  /var/run/nscd/{passwd,group,services,hosts} rw,
++  /var/db/nscd/{passwd,group,services,hosts} rw,
+   /var/run/{nscd/,}nscd.pid rwl,
+   /var/log/nscd.log rw,
+   @{PROC}/[0-9]*/fd/ r,
