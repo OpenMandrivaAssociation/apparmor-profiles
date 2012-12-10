@@ -1,3 +1,2 @@
 sources:
-  "apparmor-profiles-2.3-1351.tar.gz:"	88d9d421524b3cec9e00bd3e2506ba89714ef7ca
-  "usr.sbin.slapd.apparmor:"	6f11b1c654d185dd11c8b43d11d7ca760cc46d42
+  "apparmor-profiles-2.3-1351.tar.gz": 88d9d421524b3cec9e00bd3e2506ba89714ef7ca
